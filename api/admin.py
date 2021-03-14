@@ -27,7 +27,7 @@ class UserAdmin(BaseUserAdmin):
             'fields': ('email', 'password1', 'password2')
         }),
     )
-
+admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Profile)
 admin.site.register(models.Post)
 admin.site.register(models.Comment)
