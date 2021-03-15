@@ -15,7 +15,7 @@ class UserAdmin(BaseUserAdmin):
                 'fields': (
                     'is_active',
                     'is_staff',
-                    'is_superuser'
+                    'is_superuser',
                 )
             }
         ),
@@ -27,6 +27,7 @@ class UserAdmin(BaseUserAdmin):
             'fields': ('email', 'password1', 'password2')
         }),
     )
+
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Profile)
 admin.site.register(models.Post)
