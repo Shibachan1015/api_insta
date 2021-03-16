@@ -15,15 +15,15 @@ class ProfileViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(userProfile=self.request.user)
 
-class MyprofileListView(generics.ListAPIView):
+class MyProfileListView(generics.ListAPIView):
     queryset = Profile.objects.all()
     serializer_class = serializers.ProfileSerializer
     def get_queryset(self):
         return self.queryset.filter(userProfile=self.request.user)
 
-class PostviewSet(viewsets.ModelViewSet):
+class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
-    serializer_class = serializers.ProfileSerializer
+    serializer_class = serializers.PostSerializer
 
     def perform_create(self, serializer):
         serializer.save(userPost=self.request.user)
